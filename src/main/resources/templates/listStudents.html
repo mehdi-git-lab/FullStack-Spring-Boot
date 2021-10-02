@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+	<h1>Liste des étudiants</h1>
+
+	<table class="table" align="center" border="1">
+		<tr>
+			<th>ID</th>
+			<th>NOM</th>
+			<th>Email</th>
+		</tr>
+		<tr th:each="etudiant : ${students}">
+			<td th:text="${etudiant.id}"></td>
+			<td th:text="${etudiant.name}"></td>
+			<td th:text="${etudiant.email}"></td>
+		</tr>
+	</table>
+
+</body>
+</html>

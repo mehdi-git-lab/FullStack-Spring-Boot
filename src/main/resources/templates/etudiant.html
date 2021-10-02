@@ -1,0 +1,20 @@
+<HTML>
+<head>
+</head>
+<body>
+<h1>List des Etudiants</h1>
+<table border =2 align ="centre">
+  <tr>
+    <th>Id</th>
+    <th>name</th>
+    <th>email</th>
+  </tr>
+  <tr  th:each="etudiant : ${student}">
+    <td  th:text="${etudiant.id}"></td>
+    <td  th:text="${etudiant.name}"></td>
+    <td  th:text="${etudiant.email}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
