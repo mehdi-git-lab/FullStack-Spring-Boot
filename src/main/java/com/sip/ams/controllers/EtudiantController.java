@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.sip.ams.entities.Etudiant;
 
 import java.util.*;
-
+@RequestMapping("/etudiant")
 @Controller
 public class EtudiantController {
 	
