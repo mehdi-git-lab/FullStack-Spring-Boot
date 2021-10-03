@@ -3,6 +3,8 @@ package com.sip.ams.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -85,6 +87,27 @@ public class EtudiantController {
 			etudiants.add(e);
 			return "redirect:students";
 
+		}
+		
+		@GetMapping("/delete/{ide}")
+		public String suppression(@PathVariable("ide")int id) {
+			Etudiant e = new Etudiant();
+			System.out.println("id = "+id);
+			e =recherche(etudiants,id);
+			etudiants.remove(e);
+			return "redirect:../students";
+		}
+		
+		private Etudiant recherche (List<Etudiant>le,int index) {
+			Etudiant temp = null;
+			for(Etudiant e : le) {
+				if (e.getId() == index)
+					temp = e;
+				return e;
+
+			}		
+			return temp;
+			
 		}
 
 

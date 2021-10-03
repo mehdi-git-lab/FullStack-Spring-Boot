@@ -19,8 +19,8 @@
 			<td th:text="${etudiant.id}"></td>
 			<td th:text="${etudiant.name}"></td>
 			<td th:text="${etudiant.email}"></td>
-			<td><a href="#" class="btn btn-warning">modifier</td>
-		    <td><a href="#" class="btn btn-danger">supprimer</td>
+			<td><a th:href="@{/etudiant/update/{ide}(ide=${etudiant.id})}" class="btn btn-warning">modifier</td>
+		    <td><a th:href="@{/etudiant/delete/{ide}(ide=${etudiant.id})}" class="btn btn-danger">supprimer</td>
 		</tr>
 	</table>
 
